@@ -1,0 +1,178 @@
+@baseUrl = https://dev-mycrs.posdigicert.com.my:7443/RoamingCertificateEnrollNoLimit.svc
+
+###
+
+POST {{baseUrl}}
+Content-Type: text/xml;charset=UTF-8
+SOAPAction: "http://tempuri.org/IRoamingCertificateEnrollNoLimit/EnrollRoamingCert"
+
+<soapenv:Envelope 
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:tem="http://tempuri.org/"
+    xmlns:onec="http://schemas.datacontract.org/2004/07/OneCRSWcf"
+    xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <tem:EnrollRoamingCert>
+            <!--Optional:-->
+            <tem:projectCodesetProfile>Beta-MYCRS_AL8W6FGZ</tem:projectCodesetProfile>
+            <!--Optional:-->
+            <tem:productCode>IHP0001-NEW</tem:productCode>
+            <!--Optional:-->
+            <tem:userProfile>
+                <!--Optional:-->
+                <onec:Add>JALAN MACALISTER</onec:Add>
+                <!--Optional:-->
+                <onec:BussinessType>C</onec:BussinessType>
+                <!--Optional:-->
+                <onec:Citizenship>MY</onec:Citizenship>
+                <!--Optional:-->
+                <onec:City>GEORGE TOWN</onec:City>
+                <!--Optional:-->
+                <onec:CompAdd>JALAN MACALISTER</onec:CompAdd>
+                <!--Optional:-->
+                <onec:CompCity>GEORGE TOWN</onec:CompCity>
+                <!--Optional:-->
+                <onec:CompCountry>MY</onec:CompCountry>
+                <!--Optional:-->
+                <onec:CompFaxno></onec:CompFaxno>
+                <!--Optional:-->
+                <onec:CompName>ISLAND HOSPITAL SDN. BHD.</onec:CompName>
+                <!--Optional:-->
+                <onec:CompPostcode>10450</onec:CompPostcode>
+                <!--Optional:-->
+                <onec:CompRegNo>199401038023</onec:CompRegNo>
+                <!--Optional:-->
+                <onec:CompState>09</onec:CompState>
+                <!--Optional:-->
+                <onec:Comptel>0444422222</onec:Comptel>
+                <!--Optional:-->
+                <onec:Country>MY</onec:Country>
+                <!--Optional:-->
+                <onec:Dob>22-09-1990</onec:Dob>
+                <!--Optional:-->
+                <onec:Email>uatuserone01@gmail.com</onec:Email>
+                <!--Optional:-->
+                <onec:Faxno></onec:Faxno>
+                <!--Optional:-->
+                <onec:Idno>IHPDOCTOR10</onec:Idno>
+                <!--Optional:-->
+                <onec:Idtype>PP</onec:Idtype>
+                <!--Optional:-->
+                <onec:Name>DOCTOR IHP TEN</onec:Name>
+                <!--Optional:-->
+                <onec:Postcode>10450</onec:Postcode>
+                <!--Optional:-->
+                <onec:State>09</onec:State>
+                <!--Optional:-->
+                <onec:Telhome>0444422222</onec:Telhome>
+                <!--Optional:-->
+                <onec:Telmobile>0192222222</onec:Telmobile>
+            </tem:userProfile>
+            <!--Optional:-->
+            <tem:document>
+                <!--Zero or more repetitions:-->
+            </tem:document>
+            <!--Optional:-->
+            <tem:PIN>Pin123456@</tem:PIN>
+            <!--Optional:-->
+            <tem:sendNotice>1</tem:sendNotice>
+        </tem:EnrollRoamingCert>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+###
+
+POST {{baseUrl}}
+Content-Type: text/xml;charset=UTF-8
+SOAPAction: "http://tempuri.org/IRoamingCertificateEnrollNoLimit/GenerateResetPinCode"
+
+<soapenv:Envelope 
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:tem="http://tempuri.org/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <tem:GenerateResetPinCode>
+            <!--Optional:-->
+            <tem:projectCodesetProfile>Beta-MYCRS_AL8W6FGZ</tem:projectCodesetProfile>
+            <!--Optional:-->
+            <tem:userId>IHPDOCTOR10</tem:userId>
+            <!--Optional:-->
+            <tem:email>uatuserone01@gmail.com</tem:email>
+        </tem:GenerateResetPinCode>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+###
+
+POST {{baseUrl}}
+Content-Type: text/xml;charset=UTF-8
+SOAPAction: "http://tempuri.org/IRoamingCertificateEnrollNoLimit/ResetPin"
+
+<soapenv:Envelope 
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:tem="http://tempuri.org/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <tem:ResetPin>
+            <!--Optional:-->
+            <tem:projectCodesetProfile>Beta-MYCRS_AL8W6FGZ</tem:projectCodesetProfile>
+            <!--Optional:-->
+            <tem:userId>IHPDOCTOR10</tem:userId>
+            <!--Optional:-->
+            <tem:resetCode>0778649a-6a2e-468a-9fc1-55c97835d866</tem:resetCode>
+            <!--Optional:-->
+            <tem:newPIN>Pin123456@</tem:newPIN>
+        </tem:ResetPin>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+###
+
+POST {{baseUrl}}
+Content-Type: text/xml;charset=UTF-8
+SOAPAction: "http://tempuri.org/IRoamingCertificateEnrollNoLimit/RequestRevoke"
+
+<soapenv:Envelope 
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:tem="http://tempuri.org/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <tem:RequestRevoke>
+            <!--Optional:-->
+            <tem:projectCode>Beta-MYCRS_AL8W6FGZ</tem:projectCode>
+            <!--Optional:-->
+            <tem:userId>IHPDOCTOR10</tem:userId>
+            <!--Optional:-->
+            <tem:requestnCode>IHP000051</tem:requestnCode>
+            <!--Optional:-->
+            <tem:reasonCode>-2</tem:reasonCode>
+            <!--Optional:-->
+            <tem:reasonDesc>test</tem:reasonDesc>
+            <!--Optional:-->
+            <tem:docType>pdf</tem:docType>
+            <!--Optional:-->
+            <tem:authLetter></tem:authLetter>
+        </tem:RequestRevoke>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+###
+
+POST {{baseUrl}}
+Content-Type: text/xml;charset=UTF-8
+SOAPAction: "http://tempuri.org/IRoamingCertificateEnrollNoLimit/certificateStatusIIH"
+
+<soapenv:Envelope 
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:tem="http://tempuri.org/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <tem:certificateStatusIIH>
+        <!--Optional:-->
+        <tem:sender>Beta-MYCRS_AL8W6FGZ</tem:sender>
+        <!--Optional:-->
+        <tem:idNo>IHPDOCTOR10</tem:idNo>
+        </tem:certificateStatusIIH>
+    </soapenv:Body>
+</soapenv:Envelope>

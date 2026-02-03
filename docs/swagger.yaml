@@ -1,0 +1,137 @@
+basePath: /mycrs
+info:
+  contact: {}
+  description: This is a mycrs server.
+  title: Swagger MYCRS API
+  version: "1.0"
+paths:
+  /common/cron/start:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      tags:
+      - Common
+  /common/cron/stat:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      tags:
+      - Common
+  /common/cron/stop:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      tags:
+      - Common
+  /dev/certificateStatusIIH:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      tags:
+      - Dev
+  /dev/enrollRoamingCert:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      tags:
+      - Dev
+  /dev/generateResetPinCode:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      tags:
+      - Dev
+  /dev/requestRevoke/{requestCode}:
+    get:
+      parameters:
+      - description: Request Code
+        in: path
+        name: requestCode
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      tags:
+      - Dev
+  /dev/resetPin/{resetCode}:
+    get:
+      parameters:
+      - description: Reset Code
+        in: path
+        name: resetCode
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      tags:
+      - Dev
+  /roaming/certificateStatusIIH:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      tags:
+      - Roaming
+  /roaming/enrollRoamingCert:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      tags:
+      - Roaming
+  /roaming/generateResetPinCode:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      tags:
+      - Roaming
+  /roaming/requestRevoke:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      tags:
+      - Roaming
+  /roaming/resetPin:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      tags:
+      - Roaming
+swagger: "2.0"
