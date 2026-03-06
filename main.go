@@ -11,6 +11,7 @@ import (
     "mycrs/utils"
     "os"
 
+    "github.com/gofiber/contrib/fiberzerolog"
     "github.com/gofiber/fiber/v2"
     "github.com/gofiber/fiber/v2/middleware/compress"
     "github.com/gofiber/fiber/v2/middleware/recover"
@@ -67,6 +68,9 @@ func main() {
         EnableStackTrace: true,
     }))
     app.Use(compress.New())
+    app.Use(fiberzerolog.New(fiberzerolog.Config{
+        Logger: &utils.Logger,
+    }))
     database.ConnectDB()
     defer database.CloseDB()
 

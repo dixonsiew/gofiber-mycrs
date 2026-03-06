@@ -1,9 +1,11 @@
 package utils
 
 import (
+    "crypto/tls"
     "fmt"
     "mycrs/config"
     "mycrs/model"
+    "net/http"
     "strconv"
     "strings"
 
@@ -40,7 +42,14 @@ var (
 )
 
 func SetSetting() {
-    client = resty.New()
+    httpClient := &http.Client{
+        Transport: &http.Transport{
+            TLSClientConfig: &tls.Config{
+                InsecureSkipVerify: true, // This is the key setting to skip verification
+            },
+        },
+    }
+    client = resty.NewWithClient(httpClient)
     Setting = model.Setting{
         DB_URL:          config.Config("DB_URL"),
         DB_PORT:         config.Config("DB_PORT"),
